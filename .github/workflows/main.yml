@@ -1,4 +1,4 @@
-name: Pylint and Docker
+name: Linter and Docker
 
 on:
   push:
