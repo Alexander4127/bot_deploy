@@ -10,6 +10,8 @@ jobs:
         python-version: ["3.8"]
     steps:
     - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag bot:$(date +%s)
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:

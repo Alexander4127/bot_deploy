@@ -1,3 +1,4 @@
+"""Simple bot implementation"""
 import os
 import telebot
 from dotenv import load_dotenv
