@@ -9,8 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bot:$(date +%s)
+    steps:
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag bot:$(date +%s)
   linter:
     runs-on: ubuntu-latest
     strategy:
