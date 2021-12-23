@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install flake8
+          pip install black flake8
       - name: Analysing the code with pylint
         uses: wearerequired/lint-action@v1
         with:
-          flake8: true
+          black: true
