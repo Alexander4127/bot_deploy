@@ -16,8 +16,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install pylint
+        python -m pip3 install --upgrade pip
+        pip3 install pylint
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag bot:$(date +%s)
