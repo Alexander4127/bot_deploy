@@ -10,8 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bot:$(date +%s)
+        run: docker build . --file Dockerfile --tag bot:$(date +%s)
   linter:
     runs-on: ubuntu-latest
     strategy:
