@@ -29,7 +29,6 @@ jobs:
           pip install --upgrade pip
           pip install pylint
         - name: Analysing the code with pylint
-        run: |
           uses: wearerequired/lint-action@v1
           with:
             pylint: true
