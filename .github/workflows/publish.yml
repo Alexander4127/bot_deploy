@@ -12,6 +12,7 @@ jobs:
   deploy:
     name: Deploy a new image
     runs-on: ubuntu-latest
+    needs: build, linter
     if: ${{ github.event.workflow_run.conslusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
