@@ -17,7 +17,7 @@ def send_welcome(message):
 def send_help(message):
     """Sends a greeting to user"""
     bot.reply_to(message, "Enter key words and you will see \
-                            the most appproptiate videos.")
+    the most appproptiate videos.")
 
 
 def get_rating(result):
