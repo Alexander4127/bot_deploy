@@ -50,6 +50,7 @@ def echo_all(message):
         top = r.items
     else:
         top = r.items[-3:]
+    top.reverse()
 
     answer = ""
     for res in top:
@@ -59,7 +60,7 @@ def echo_all(message):
         if video_by_id.items[0].snippet.defaultAudioLanguage is not None:
             s = video_by_id.items[0].snippet.defaultAudioLanguage
             answer += f"The language of the video is {s}\n"
-        if video_by_id.items[0].contentDetails.caption:
+        if video_by_id.items[0].contentDetails.caption is True:
             answer += "This video has subtitles!\n\n"
         else:
             answer += "There is no subtitles in this video :(\n\n"
