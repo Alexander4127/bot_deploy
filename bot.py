@@ -17,7 +17,7 @@ def send_welcome(message):
 def send_help(message):
     """Sends a greeting to user"""
     bot.reply_to(message, "Enter key words and you will see \
-    the most appproptiate videos.")
+the most appproptiate videos.")
 
 
 def get_rating(result):
@@ -55,11 +55,14 @@ def echo_all(message):
     for res in top:
         answer += f"Url: https://www.youtube.com/watch?v={res.id.videoId}\n"
         answer += "Title: " + res.snippet.title + '\n'
-        answer += "Description: "
-        if res.snippet.description is not None:
-            answer += res.snippet.description + '\n'
+        video_by_id = api.get_video_by_id(video_id=res.id.videoId)
+        if video_by_id.items[0].snippet.defaultAudioLanguage is not None:
+            s = video_by_id.items[0].snippet.defaultAudioLanguage
+            answer += f"The language of the video is {s}\n"
+        if video_by_id.items[0].contentDetails.caption:
+            answer += "This video has subtitles!\n\n"
         else:
-            answer += "Was not found\n"
+            answer += "There is no subtitles in this video :(\n\n"
     bot.reply_to(message, answer)
 
 
