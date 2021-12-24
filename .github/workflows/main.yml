@@ -28,6 +28,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install flake8
-      - name: Analysing the code with pylint
+      - name: Analysing the code with linter
         run: |
           flake8 .
