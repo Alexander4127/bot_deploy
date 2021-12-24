@@ -1,10 +1,8 @@
 """Simple bot implementation"""
 import telebot
 import os
-from dotenv import load_dotenv
 
-load_dotenv('.env')
-bot = telebot.TeleBot(os.getenv('BOT_TOKEN'))
+bot = telebot.TeleBot(os.environ['BOT_TOKEN'])
 
 
 @bot.message_handler(commands=['start', 'help'])
