@@ -3,6 +3,7 @@ name: Trigger deployment on external event
 on:
   release:
     types: [ published ]
+  create:
   workflow_run:
     workflows: [ "Docker and Linter" ]
     types: [completed]
