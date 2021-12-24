@@ -6,7 +6,8 @@ on:
   create:
   workflow_run:
     workflows: [ "Docker and Linter" ]
-    types: [completed]
+    types:
+      - completed
 
 jobs:
   deploy:
