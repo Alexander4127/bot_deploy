@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Wait for build to succeed
+      - name: Wait for checking
         uses: lewagon/wait-on-check-action@v1.0.0
         with:
           ref: ${{ github.ref }}
-          running-workflow-name: 'Linter and Docker'
+          running-workflow-name: 'Deploy a new image'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
