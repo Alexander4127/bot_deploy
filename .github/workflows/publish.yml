@@ -5,7 +5,7 @@ on:
     types: [ published ]
   create:
   workflow_run:
-    workflows: [ "Docker and Linter" ]
+    workflows: [ "Linter and Docker" ]
     types:
       - completed
 
