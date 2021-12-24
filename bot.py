@@ -38,7 +38,7 @@ def get_rating(result):
 def echo_all(message):
     """Answers the message"""
     req = ','.join(message.text.split())
-    r = api.search_by_keywords(q=req, search_type=["video"], count=100)
+    r = api.search_by_keywords(q=req, search_type=["video"], count=30)
     r.items.sort(key=get_rating)
 
     if len(r.items) == 0:
